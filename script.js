@@ -119,5 +119,13 @@ function submitForm(e) {
   document.getElementById('fsuccess').style.display = 'block';
 }
 
+// ── Service page scroll nav
+function svcScroll(id, btn) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  document.querySelectorAll('.svnav-btn').forEach(b => b.classList.remove('svactive'));
+  if (btn) btn.classList.add('svactive');
+}
+
 // ── Init: trigger reveals on home
 setTimeout(() => goTo('home'), 100);

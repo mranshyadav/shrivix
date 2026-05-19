@@ -406,335 +406,476 @@
 <!-- ===== SERVICES ===== -->
 <div id="page-services" class="page">
 
-  
+  <!-- Hero -->
+  <div class="svh">
+    <div class="svh-dots"></div>
+    <div class="svh-inner rv">
+      <div class="lbl">Our Services</div>
+      <h1 class="svh-title">Everything your business<br><em>needs to grow</em></h1>
+      <p class="svh-sub">Eight battle-tested services — from AI voice agents to full-stack software — designed to help modern businesses move faster, sell smarter, and operate at a new level.</p>
+      <div class="svh-btns">
+        <button class="bp" onclick="goTo('contact')">Start a Project →</button>
+        <button class="bs" onclick="goTo('products')">Explore Products</button>
+      </div>
+    </div>
+    <div class="svh-bar">
+      <div class="svh-stat"><div class="svh-stat-n">8</div><div class="svh-stat-l">Services</div></div>
+      <div class="svh-stat"><div class="svh-stat-n">50+</div><div class="svh-stat-l">Clients Served</div></div>
+      <div class="svh-stat"><div class="svh-stat-n">24/7</div><div class="svh-stat-l">AI Availability</div></div>
+      <div class="svh-stat"><div class="svh-stat-n">2 Wk</div><div class="svh-stat-l">Avg. Delivery</div></div>
+      <div class="svh-stat"><div class="svh-stat-n">100%</div><div class="svh-stat-l">Satisfaction</div></div>
+    </div>
+  </div>
 
-  <!-- Page Header -->
-  <div class="ph"><div class="ph-inner">
-    <div class="lbl">Our Services</div>
-    <h1 class="h2">Everything your business<br><em>needs to grow</em></h1>
-    <p>Simple, honest descriptions of what we do, how it works, and exactly how it helps your business move faster and earn more.</p>
-  </div></div>
+  <!-- Sticky service nav -->
+  <div class="svnav">
+    <div class="svnav-inner">
+      <button class="svnav-btn svactive" onclick="svcScroll('sv01',this)">📞 Cold Calling</button>
+      <button class="svnav-btn" onclick="svcScroll('sv02',this)">✉️ Cold Email</button>
+      <button class="svnav-btn" onclick="svcScroll('sv03',this)">💬 AI Chatbot</button>
+      <button class="svnav-btn" onclick="svcScroll('sv04',this)">🌐 Web Dev</button>
+      <button class="svnav-btn" onclick="svcScroll('sv05',this)">⚡ Automation</button>
+      <button class="svnav-btn" onclick="svcScroll('sv06',this)">🤖 Custom AI</button>
+      <button class="svnav-btn" onclick="svcScroll('sv07',this)">📱 App Dev</button>
+      <button class="svnav-btn" onclick="svcScroll('sv08',this)">📊 Audit</button>
+    </div>
+  </div>
+
+  <!-- Overview grid -->
+  <div class="svgw">
+    <div class="svgw-hdr rv">
+      <div><div class="lbl">All Services</div><h2 class="h2" style="margin:8px 0 0">What we do <em>for you</em></h2></div>
+      <button class="bp" onclick="goTo('contact')">Get a Free Consultation →</button>
+    </div>
+    <div class="svgw-grid rv">
+      <div class="svgc" onclick="svcScroll('sv01',null)">
+        <div class="svgc-top"><span class="svgc-ico">📞</span><span class="svgc-n">01</span></div>
+        <h3>AI Cold Calling Agent</h3>
+        <p>A tireless AI voice rep that calls leads, handles objections, and books meetings around the clock.</p>
+        <div class="svgc-bot"><span class="svgc-tag">Sales</span><span class="svgc-arr">↗</span></div>
+      </div>
+      <div class="svgc" onclick="svcScroll('sv02',null)">
+        <div class="svgc-top"><span class="svgc-ico">✉️</span><span class="svgc-n">02</span></div>
+        <h3>AI Cold Email Agent</h3>
+        <p>Personalised outreach at scale — researches prospects, writes emails, and follows up automatically.</p>
+        <div class="svgc-bot"><span class="svgc-tag">Outreach</span><span class="svgc-arr">↗</span></div>
+      </div>
+      <div class="svgc" onclick="svcScroll('sv03',null)">
+        <div class="svgc-top"><span class="svgc-ico">💬</span><span class="svgc-n">03</span></div>
+        <h3>AI Customer Support</h3>
+        <p>An always-on chatbot that handles support, qualifies leads, and escalates only when needed.</p>
+        <div class="svgc-bot"><span class="svgc-tag">Support</span><span class="svgc-arr">↗</span></div>
+      </div>
+      <div class="svgc" onclick="svcScroll('sv04',null)">
+        <div class="svgc-top"><span class="svgc-ico">🌐</span><span class="svgc-n">04</span></div>
+        <h3>Web Development</h3>
+        <p>Fast, beautiful, high-converting websites and web apps built on modern stacks.</p>
+        <div class="svgc-bot"><span class="svgc-tag">Build</span><span class="svgc-arr">↗</span></div>
+      </div>
+      <div class="svgc" onclick="svcScroll('sv05',null)">
+        <div class="svgc-top"><span class="svgc-ico">⚡</span><span class="svgc-n">05</span></div>
+        <h3>Business Automation</h3>
+        <p>Connect every tool in your stack and automate repetitive workflows end-to-end.</p>
+        <div class="svgc-bot"><span class="svgc-tag">Ops</span><span class="svgc-arr">↗</span></div>
+      </div>
+      <div class="svgc" onclick="svcScroll('sv06',null)">
+        <div class="svgc-top"><span class="svgc-ico">🤖</span><span class="svgc-n">06</span></div>
+        <h3>Custom AI Solutions</h3>
+        <p>Bespoke AI systems trained on your data and built for your specific business problems.</p>
+        <div class="svgc-bot"><span class="svgc-tag">AI</span><span class="svgc-arr">↗</span></div>
+      </div>
+      <div class="svgc" onclick="svcScroll('sv07',null)">
+        <div class="svgc-top"><span class="svgc-ico">📱</span><span class="svgc-n">07</span></div>
+        <h3>Mobile App Development</h3>
+        <p>Native and cross-platform mobile apps that look great and perform even better.</p>
+        <div class="svgc-bot"><span class="svgc-tag">Mobile</span><span class="svgc-arr">↗</span></div>
+      </div>
+      <div class="svgc" onclick="svcScroll('sv08',null)">
+        <div class="svgc-top"><span class="svgc-ico">📊</span><span class="svgc-n">08</span></div>
+        <h3>Tech Audit &amp; Strategy</h3>
+        <p>A clear-eyed review of your current tech stack with a prioritised roadmap to fix it fast.</p>
+        <div class="svgc-bot"><span class="svgc-tag">Strategy</span><span class="svgc-arr">↗</span></div>
+      </div>
+    </div>
+  </div>
 
   <!-- 01 — AI Cold Calling Agent -->
-  <div class="svc-detail">
-    <div class="svc-detail-inner rv">
-      <div class="svc-d-left">
-        <div class="svc-d-tag">Service 01</div>
-        <h2>AI Cold Calling <em>Agent</em></h2>
-        <p class="svc-d-intro">Imagine having a salesperson who never sleeps, never gets tired, and makes hundreds of calls a day — every single day. That's what our AI Cold Calling Agent does for your business.</p>
-        <div class="svc-d-how">
-          <div class="svc-d-how-label">💡 How it helps your business</div>
-          <p>Instead of your team spending hours cold calling and getting ignored, our AI agent calls your leads automatically, has real conversations, handles common questions and objections, and only passes warm, interested prospects to your team. You wake up every morning with new meetings already booked in your calendar.</p>
+  <section id="sv01" class="svd">
+    <div class="svd-nbg">01</div>
+    <div class="svd-inner rv">
+      <div>
+        <div class="svd-tag"><span class="svd-tag-n">Service 01</span> Sales</div>
+        <h2 class="svd-h2">AI Cold Calling <em>Agent</em></h2>
+        <p class="svd-lead">A tireless AI voice rep that calls your entire lead list automatically, handles objections naturally, and books meetings into your calendar while you focus on closing.</p>
+        <div class="svd-pts">
+          <div class="svd-pt"><div class="svd-chk">✓</div>Calls hundreds of leads per day — no manual dialling</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Speaks naturally and handles objections in real time</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Books meetings directly into Google Calendar or Calendly</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Full call recordings and transcripts delivered automatically</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Learns and improves with every call via feedback loop</div>
         </div>
-        <div class="svc-d-points">
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Calls your entire lead list automatically — no manual dialling</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Speaks naturally and handles objections just like a human</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Books meetings directly into your calendar without any manual work</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Gives you full call recordings and transcripts to review</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Gets smarter with every call — improves its own performance</div>
+        <div class="svd-quote">
+          <p class="svd-q-text">"We went from 3 booked meetings a week to 18 — without hiring a single extra person."</p>
+          <p class="svd-q-auth">— Head of Sales, B2B SaaS company</p>
         </div>
-        <button class="bp" onclick="goTo('contact')">Get This Agent <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </div>
-      <div class="svc-d-right">
-        <div class="svc-d-card">
-          <div class="svc-d-card-top">
-            <div class="svc-d-ico-lg">📞</div>
-            <h3>Cold Calling <em>Agent</em></h3>
-            <p>Your AI sales rep that works around the clock — calling leads, qualifying prospects, and filling your calendar with booked meetings while you focus on closing.</p>
-          </div>
-          <div class="svc-d-stats">
-            <div class="svc-d-stat"><div class="svc-d-stat-v">47</div><div class="svc-d-stat-l">Calls / Day</div><div class="svc-d-stat-c">↑ Automated</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">25%</div><div class="svc-d-stat-l">Conv. Rate</div><div class="svc-d-stat-c">↑ vs manual</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">24/7</div><div class="svc-d-stat-l">Availability</div><div class="svc-d-stat-c">↑ No breaks</div></div>
-          </div>
+        <div class="svd-acts">
+          <button class="bp" onclick="goTo('contact')">Deploy This Agent →</button>
+          <button class="bs" onclick="goTo('products')">See Pricing</button>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="svc-divider"></div>
-
-  <!-- 02 — AI Cold Email Agent -->
-  <div class="svc-detail">
-    <div class="svc-detail-inner rv">
-      <div class="svc-d-left">
-        <div class="svc-d-tag">Service 02</div>
-        <h2>AI Cold Email <em>Agent</em></h2>
-        <p class="svc-d-intro">Most cold emails get ignored because they feel generic. Our AI writes a personalised email for every single person on your list — and sends it at the best time to get a reply.</p>
-        <div class="svc-d-how">
-          <div class="svc-d-how-label">💡 How it helps your business</div>
-          <p>Instead of sending the same email to everyone and hoping for the best, our agent researches each prospect, writes an email that feels personal, follows up automatically if there's no reply, and keeps nudging at the right times. More replies, more conversations, more deals — without your team typing a single email.</p>
+      <div class="svd-card">
+        <div class="svd-ch">
+          <div class="svd-ico">📞</div>
+          <div><div class="svd-ch-title">Cold Calling Agent</div><div class="svd-ch-sub">Live — processing leads now</div></div>
+          <span class="svd-badge">Active</span>
         </div>
-        <div class="svc-d-points">
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Writes unique, personalised emails for every prospect</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Sends at the exact time each person is most likely to open</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Follows up automatically — 3, 5, 7 days later — until they reply</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Connects directly with your CRM like HubSpot or Salesforce</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Tests different subject lines and messages to find what works best</div>
+        <div class="svd-mets">
+          <div class="svd-met"><div class="svd-met-v">47</div><div class="svd-met-l">Calls/Day</div><div class="svd-met-c">↑ Automated</div></div>
+          <div class="svd-met"><div class="svd-met-v">25%</div><div class="svd-met-l">Conv. Rate</div><div class="svd-met-c">↑ vs manual</div></div>
+          <div class="svd-met"><div class="svd-met-v">24/7</div><div class="svd-met-l">Uptime</div><div class="svd-met-c">↑ No breaks</div></div>
         </div>
-        <button class="bp" onclick="goTo('contact')">Get This Agent <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </div>
-      <div class="svc-d-right">
-        <div class="svc-d-card">
-          <div class="svc-d-card-top">
-            <div class="svc-d-ico-lg">✉️</div>
-            <h3>Email Outreach <em>Agent</em></h3>
-            <p>Your AI copywriter and outreach machine. It writes, sends, and follows up on personalised emails at scale — so your inbox fills with replies, not silence.</p>
-          </div>
-          <div class="svc-d-stats">
-            <div class="svc-d-stat"><div class="svc-d-stat-v">320</div><div class="svc-d-stat-l">Sent / Week</div><div class="svc-d-stat-c">↑ Auto</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">38%</div><div class="svc-d-stat-l">Open Rate</div><div class="svc-d-stat-c">↑ +12pts</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">11.9%</div><div class="svc-d-stat-l">Reply Rate</div><div class="svc-d-stat-c">↑ 3x avg</div></div>
-          </div>
+        <div class="svd-feed">
+          <div class="svd-feed-lbl">Recent Activity</div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Meeting booked — James R.<div class="svd-feed-time">2 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Lead qualified — Sarah M.<div class="svd-feed-time">11 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot warn"></div>Voicemail left — Chris T.<div class="svd-feed-time">24 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Meeting booked — Priya K.<div class="svd-feed-time">1 hr ago</div></div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="svc-divider"></div>
-
-  <!-- 03 — Workflow Automation -->
-  <div class="svc-detail">
-    <div class="svc-detail-inner rv">
-      <div class="svc-d-left">
-        <div class="svc-d-tag">Service 03</div>
-        <h2>Workflow <em>Automation</em></h2>
-        <p class="svc-d-intro">Think about all the small, repetitive things your team does every day — copy-pasting data, sending update emails, updating spreadsheets, chasing approvals. We make all of that happen automatically.</p>
-        <div class="svc-d-how">
-          <div class="svc-d-how-label">💡 How it helps your business</div>
-          <p>Your team stops wasting hours on tasks a computer should be doing. We map out all your daily processes and automate them — so the right thing happens automatically at the right time, without anyone needing to remember or manually trigger it. Your people focus on work that actually requires human thinking.</p>
-        </div>
-        <div class="svc-d-points">
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Automates data entry, report generation, and file management</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Sends automatic alerts and notifications to your team via Slack or email</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Connects all your tools so data flows between them without manual effort</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Handles approval workflows — request sent, reviewed, and confirmed automatically</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Saves your team an average of 14 hours every single week</div>
-        </div>
-        <button class="bp" onclick="goTo('contact')">Automate My Workflows <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </div>
-      <div class="svc-d-right">
-        <div class="svc-d-card">
-          <div class="svc-d-card-top">
-            <div class="svc-d-ico-lg">⚡</div>
-            <h3>Workflow <em>Automation</em></h3>
-            <p>Stop doing the same manual tasks every day. We build smart automation that runs your daily processes in the background — fast, accurate, and never forgetting a step.</p>
-          </div>
-          <div class="svc-d-stats">
-            <div class="svc-d-stat"><div class="svc-d-stat-v">14h</div><div class="svc-d-stat-l">Saved / Week</div><div class="svc-d-stat-c">↑ Per team</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">0</div><div class="svc-d-stat-l">Manual Errors</div><div class="svc-d-stat-c">↑ Zero mistakes</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">3×</div><div class="svc-d-stat-l">Speed Gain</div><div class="svc-d-stat-c">↑ Avg. result</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="svc-divider"></div>
-
-  <!-- 04 — Business Operations AI -->
-  <div class="svc-detail">
-    <div class="svc-detail-inner rv">
-      <div class="svc-d-left">
-        <div class="svc-d-tag">Service 04</div>
-        <h2>Business Operations <em>AI</em></h2>
-        <p class="svc-d-intro">Running a business involves a hundred moving parts — HR, finance, procurement, reporting. We build intelligent systems that tie all of it together and keep it running smoothly without constant management.</p>
-        <div class="svc-d-how">
-          <div class="svc-d-how-label">💡 How it helps your business</div>
-          <p>Instead of managing operations manually through spreadsheets and emails, you get a smart system that tracks everything, flags issues before they become problems, generates reports automatically, and keeps your whole business aligned. It's like having an operations manager who works 24/7 and never misses a detail.</p>
-        </div>
-        <div class="svc-d-points">
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Automates HR processes — leave requests, onboarding, payroll reminders</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Tracks and manages procurement orders and supplier communications</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Generates financial reports and dashboards automatically every week</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Sends alerts when something needs your attention — before it becomes a crisis</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Scales as your business grows — no need to rebuild or add more staff</div>
-        </div>
-        <button class="bp" onclick="goTo('contact')">Optimise My Operations <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </div>
-      <div class="svc-d-right">
-        <div class="svc-d-card">
-          <div class="svc-d-card-top">
-            <div class="svc-d-ico-lg">🏢</div>
-            <h3>Business Operations <em>AI</em></h3>
-            <p>A smart operations backbone for your entire business. Automate HR, finance, procurement, and reporting so your leadership team can focus on strategy, not admin.</p>
-          </div>
-          <div class="svc-d-stats">
-            <div class="svc-d-stat"><div class="svc-d-stat-v">80%</div><div class="svc-d-stat-l">Ops Automated</div><div class="svc-d-stat-c">↑ avg. client</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">10×</div><div class="svc-d-stat-l">ROI</div><div class="svc-d-stat-c">↑ Delivered</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">∞</div><div class="svc-d-stat-l">Scalability</div><div class="svc-d-stat-c">↑ No limits</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="svc-divider"></div>
-
-  <!-- 05 — Mobile Applications -->
-  <div class="svc-detail">
-    <div class="svc-detail-inner rv">
-      <div class="svc-d-left">
-        <div class="svc-d-tag">Service 05</div>
-        <h2>Mobile <em>Applications</em></h2>
-        <p class="svc-d-intro">Whether you need an app for your customers, your field team, or your internal operations — we design and build mobile apps that are fast, beautiful, and actually enjoyable to use.</p>
-        <div class="svc-d-how">
-          <div class="svc-d-how-label">💡 How it helps your business</div>
-          <p>A well-built mobile app puts your product or service in your customer's pocket. It increases engagement, makes your service more accessible, and opens up revenue channels you simply can't reach through a website alone. We build apps that users love — and that actually grow your business from day one.</p>
-        </div>
-        <div class="svc-d-points">
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Works on both iPhone and Android from a single codebase — saves you money</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Designed to be simple and intuitive — users figure it out in seconds</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Connects to your backend, payment systems, and third-party services</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Tested thoroughly before launch — no embarrassing bugs on day one</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>We maintain and update it after launch — you're never left alone</div>
-        </div>
-        <button class="bp" onclick="goTo('contact')">Build My App <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </div>
-      <div class="svc-d-right">
-        <div class="svc-d-card">
-          <div class="svc-d-card-top">
-            <div class="svc-d-ico-lg">📱</div>
-            <h3>Mobile <em>Applications</em></h3>
-            <p>Beautiful, fast, and reliable apps for iOS and Android. From idea to App Store — we design, build, test, and launch your mobile app end-to-end and keep it running long-term.</p>
-          </div>
-          <div class="svc-d-stats">
-            <div class="svc-d-stat"><div class="svc-d-stat-v">10K</div><div class="svc-d-stat-l">Users in Month 1</div><div class="svc-d-stat-c">↑ Loopify</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">4wk</div><div class="svc-d-stat-l">Avg. Delivery</div><div class="svc-d-stat-c">↑ Fast</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">0</div><div class="svc-d-stat-l">Critical Bugs</div><div class="svc-d-stat-c">↑ At launch</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="svc-divider"></div>
-
-  <!-- 06 — Web Development -->
-  <div class="svc-detail">
-    <div class="svc-detail-inner rv">
-      <div class="svc-d-left">
-        <div class="svc-d-tag">Service 06</div>
-        <h2>Web <em>Development</em></h2>
-        <p class="svc-d-intro">Your website is often the first thing a customer sees. We build websites and web apps that look sharp, load fast, and turn visitors into paying customers — not just pretty pages that sit there.</p>
-        <div class="svc-d-how">
-          <div class="svc-d-how-label">💡 How it helps your business</div>
-          <p>A fast, professional website builds trust instantly and converts visitors into leads. Whether you need a marketing site, an e-commerce platform, or a complex SaaS product — we engineer it to perform. Your website becomes your best-performing salesperson, working around the clock.</p>
-        </div>
-        <div class="svc-d-points">
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Loads in under 2 seconds — fast sites rank higher and convert better</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Looks great on every device — phone, tablet, and desktop</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Built to rank on Google — SEO best practices from the ground up</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Scales effortlessly whether you have 100 or 1 million visitors</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Easy for your team to manage and update — no technical knowledge needed</div>
-        </div>
-        <button class="bp" onclick="goTo('contact')">Build My Website <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </div>
-      <div class="svc-d-right">
-        <div class="svc-d-card">
-          <div class="svc-d-card-top">
-            <div class="svc-d-ico-lg">🌐</div>
-            <h3>Web <em>Development</em></h3>
-            <p>From a sharp marketing website to a full SaaS platform — we build web products that are fast, scalable, and beautiful. Your online presence engineered to grow your business.</p>
-          </div>
-          <div class="svc-d-stats">
-            <div class="svc-d-stat"><div class="svc-d-stat-v">&lt;2s</div><div class="svc-d-stat-l">Load Time</div><div class="svc-d-stat-c">↑ Always fast</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">5wk</div><div class="svc-d-stat-l">Avg. Delivery</div><div class="svc-d-stat-c">↑ On schedule</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">1M+</div><div class="svc-d-stat-l">Scale Ready</div><div class="svc-d-stat-c">↑ Built to grow</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="svc-divider"></div>
-
-  <!-- 07 — Custom Solutions -->
-  <div class="svc-detail">
-    <div class="svc-detail-inner rv">
-      <div class="svc-d-left">
-        <div class="svc-d-tag">Service 07</div>
-        <h2>Custom <em>Solutions</em></h2>
-        <p class="svc-d-intro">Sometimes your business has a very specific problem that no off-the-shelf software can solve. That's where we come in. We build exactly what you need — from scratch, designed around your unique situation.</p>
-        <div class="svc-d-how">
-          <div class="svc-d-how-label">💡 How it helps your business</div>
-          <p>Instead of forcing your business to fit into generic software that kind of works, you get a system built precisely for how you actually operate. No unnecessary features, no missing ones. Just clean, purpose-built technology that solves your exact problem and gives you a competitive advantage no one else has.</p>
-        </div>
-        <div class="svc-d-points">
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Built 100% around your specific business process and requirements</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Integrates with every tool you already use — no disruption to your workflow</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>No licensing fees — you own it completely, forever</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Can incorporate AI, automation, or advanced data processing if needed</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Delivered with full documentation so your team understands exactly how it works</div>
-        </div>
-        <button class="bp" onclick="goTo('contact')">Discuss My Problem <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </div>
-      <div class="svc-d-right">
-        <div class="svc-d-card">
-          <div class="svc-d-card-top">
-            <div class="svc-d-ico-lg">🔧</div>
-            <h3>Custom <em>Solutions</em></h3>
-            <p>Got a unique problem no existing software solves? We architect and build bespoke systems tailored precisely to your business — owned by you, built for exactly how you work.</p>
-          </div>
-          <div class="svc-d-stats">
-            <div class="svc-d-stat"><div class="svc-d-stat-v">100%</div><div class="svc-d-stat-l">Ownership</div><div class="svc-d-stat-c">↑ You own it</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">0</div><div class="svc-d-stat-l">License Fees</div><div class="svc-d-stat-c">↑ Forever</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">∞</div><div class="svc-d-stat-l">Flexibility</div><div class="svc-d-stat-c">↑ Your rules</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="svc-divider"></div>
-
-  <!-- 08 — IT Consultation -->
-  <div class="svc-detail">
-    <div class="svc-detail-inner rv">
-      <div class="svc-d-left">
-        <div class="svc-d-tag">Service 08</div>
-        <h2>IT <em>Consultation</em></h2>
-        <p class="svc-d-intro">Not sure what technology your business actually needs? Or worried you're spending money in the wrong places? We sit down with you, listen carefully, and give you honest, practical advice — no jargon, no upselling.</p>
-        <div class="svc-d-how">
-          <div class="svc-d-how-label">💡 How it helps your business</div>
-          <p>Many businesses waste money on technology that doesn't work for them, or miss opportunities because they don't know what's available. A consultation with Shrivix gives you a clear, unbiased view of where you are, where you should be, and the exact steps to get there. Think of it as a health check for your entire technology setup.</p>
-        </div>
-        <div class="svc-d-points">
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Full audit of your current technology — what's working and what isn't</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Clear, jargon-free recommendations you can act on immediately</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Roadmap showing exactly how to modernise your tech over the next 12 months</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Identifies quick wins that can reduce costs or save time this week</div>
-          <div class="svc-d-pt"><div class="svc-d-chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>Completely honest — we'll tell you if you don't need to spend money</div>
-        </div>
-        <button class="bp" onclick="goTo('contact')">Book a Consultation <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </div>
-      <div class="svc-d-right">
-        <div class="svc-d-card">
-          <div class="svc-d-card-top">
-            <div class="svc-d-ico-lg">💡</div>
-            <h3>IT <em>Consultation</em></h3>
-            <p>Get clear, honest advice on your technology from people who build it. We review your current setup, find what's holding you back, and give you a practical plan to move forward.</p>
-          </div>
-          <div class="svc-d-stats">
-            <div class="svc-d-stat"><div class="svc-d-stat-v">1hr</div><div class="svc-d-stat-l">Discovery Call</div><div class="svc-d-stat-c">↑ Free first</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">48h</div><div class="svc-d-stat-l">Full Report</div><div class="svc-d-stat-c">↑ Delivered</div></div>
-            <div class="svc-d-stat"><div class="svc-d-stat-v">100%</div><div class="svc-d-stat-l">Unbiased</div><div class="svc-d-stat-c">↑ Always honest</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Why section -->
-  <section class="why-section-inner" style="padding:72px 48px;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-    <div class="rv"><div class="lbl">Why Choose Shrivix</div><h2 class="h2">The same commitment <em>across every service</em></h2></div>
-    <div class="why-grid rv">
-      <div class="why-item"><div class="wi">🚀</div><h4>Fast Delivery</h4><p>Two-week sprint cycles mean you see working results fast — not wait months for things to happen.</p></div>
-      <div class="why-item"><div class="wi">🔒</div><h4>Security First</h4><p>Every system we build has security built in from the start — your data and your customers' data stay safe.</p></div>
-      <div class="why-item"><div class="wi">📈</div><h4>Built to Scale</h4><p>Whatever we build for you today will still work perfectly when your business is 10 times bigger.</p></div>
-      <div class="why-item"><div class="wi">🤝</div><h4>Always There</h4><p>We don't hand you something and disappear. We're your ongoing partner for as long as you need us.</p></div>
     </div>
   </section>
+
+  <!-- 02 — AI Cold Email Agent -->
+  <section id="sv02" class="svd">
+    <div class="svd-nbg">02</div>
+    <div class="svd-inner rv">
+      <div>
+        <div class="svd-tag"><span class="svd-tag-n">Service 02</span> Outreach</div>
+        <h2 class="svd-h2">AI Cold Email <em>Agent</em></h2>
+        <p class="svd-lead">Personalised emails written by AI for every prospect on your list — sent at the optimal time, with automated follow-ups until they reply. More conversations, more deals.</p>
+        <div class="svd-pts">
+          <div class="svd-pt"><div class="svd-chk">✓</div>Researches each prospect and writes truly personalised emails</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Sends at the exact time each person is most likely to open</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Follows up automatically at 3, 5, 7 days until they reply</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Syncs directly with HubSpot, Salesforce, or any CRM</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>A/B tests subject lines and messages to find what converts</div>
+        </div>
+        <div class="svd-quote">
+          <p class="svd-q-text">"Our reply rate tripled in the first month. The emails felt personal — no one realised it was AI."</p>
+          <p class="svd-q-auth">— Marketing Director, E-commerce brand</p>
+        </div>
+        <div class="svd-acts">
+          <button class="bp" onclick="goTo('contact')">Deploy This Agent →</button>
+          <button class="bs" onclick="goTo('products')">See Pricing</button>
+        </div>
+      </div>
+      <div class="svd-card">
+        <div class="svd-ch">
+          <div class="svd-ico">✉️</div>
+          <div><div class="svd-ch-title">Email Outreach Agent</div><div class="svd-ch-sub">Running 3 active sequences</div></div>
+          <span class="svd-badge">Live</span>
+        </div>
+        <div class="svd-mets">
+          <div class="svd-met"><div class="svd-met-v">320</div><div class="svd-met-l">Sent/Week</div><div class="svd-met-c">↑ Auto</div></div>
+          <div class="svd-met"><div class="svd-met-v">38%</div><div class="svd-met-l">Open Rate</div><div class="svd-met-c">↑ +12 pts</div></div>
+          <div class="svd-met"><div class="svd-met-v">11.9%</div><div class="svd-met-l">Reply Rate</div><div class="svd-met-c">↑ 3× avg</div></div>
+        </div>
+        <div class="svd-feed">
+          <div class="svd-feed-lbl">Recent Activity</div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Reply received — Alex D.<div class="svd-feed-time">4 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Follow-up sent — 24 prospects<div class="svd-feed-time">1 hr ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>New sequence started — 80 leads<div class="svd-feed-time">2 hr ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot warn"></div>Bounce detected — 2 addresses<div class="svd-feed-time">3 hr ago</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — AI Customer Support -->
+  <section id="sv03" class="svd">
+    <div class="svd-nbg">03</div>
+    <div class="svd-inner rv">
+      <div>
+        <div class="svd-tag"><span class="svd-tag-n">Service 03</span> Support</div>
+        <h2 class="svd-h2">AI Customer <em>Support</em></h2>
+        <p class="svd-lead">An always-on support agent embedded in your website or app — handles FAQs, qualifies new leads, and routes complex issues to your team seamlessly. Reduce support costs by up to 60%.</p>
+        <div class="svd-pts">
+          <div class="svd-pt"><div class="svd-chk">✓</div>Answers 80% of support questions instantly, 24/7</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Qualifies inbound leads and books demos automatically</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Escalates to a human when the situation requires it</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Trained on your docs, FAQs, and product knowledge</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Works across web, WhatsApp, and Slack</div>
+        </div>
+        <div class="svd-quote">
+          <p class="svd-q-text">"Support tickets dropped 62% in week one. Our team now focuses on the cases that actually need humans."</p>
+          <p class="svd-q-auth">— COO, FinTech startup</p>
+        </div>
+        <div class="svd-acts">
+          <button class="bp" onclick="goTo('contact')">Deploy This Agent →</button>
+          <button class="bs" onclick="goTo('products')">See Pricing</button>
+        </div>
+      </div>
+      <div class="svd-card">
+        <div class="svd-ch">
+          <div class="svd-ico">💬</div>
+          <div><div class="svd-ch-title">Support Agent</div><div class="svd-ch-sub">Handling 14 conversations now</div></div>
+          <span class="svd-badge">Online</span>
+        </div>
+        <div class="svd-mets">
+          <div class="svd-met"><div class="svd-met-v">80%</div><div class="svd-met-l">Auto-resolved</div><div class="svd-met-c">↑ No human</div></div>
+          <div class="svd-met"><div class="svd-met-v">18s</div><div class="svd-met-l">Avg. Response</div><div class="svd-met-c">↑ Instant</div></div>
+          <div class="svd-met"><div class="svd-met-v">4.9★</div><div class="svd-met-l">Satisfaction</div><div class="svd-met-c">↑ CSAT</div></div>
+        </div>
+        <div class="svd-feed">
+          <div class="svd-feed-lbl">Live Conversations</div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Billing query — resolved<div class="svd-feed-time">Now</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Demo booked — new lead<div class="svd-feed-time">3 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot warn"></div>Escalated to team — tech issue<div class="svd-feed-time">9 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>FAQ answered — refund policy<div class="svd-feed-time">15 min ago</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — Web Development -->
+  <section id="sv04" class="svd">
+    <div class="svd-nbg">04</div>
+    <div class="svd-inner rv">
+      <div>
+        <div class="svd-tag"><span class="svd-tag-n">Service 04</span> Build</div>
+        <h2 class="svd-h2">Web <em>Development</em></h2>
+        <p class="svd-lead">Fast, beautiful, high-converting websites and web applications built on modern stacks. From a sharp marketing site to a full SaaS product — engineered to perform and grow with your business.</p>
+        <div class="svd-pts">
+          <div class="svd-pt"><div class="svd-chk">✓</div>Loads in under 2 seconds — faster sites rank higher and convert better</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Pixel-perfect on every device — mobile, tablet, and desktop</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>SEO best practices built in from day one</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Scales to 1M+ visitors without rebuilding</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Easy for your team to manage — no technical knowledge needed</div>
+        </div>
+        <div class="svd-quote">
+          <p class="svd-q-text">"Went live in 5 weeks. Our conversion rate jumped 40% compared to the old site."</p>
+          <p class="svd-q-auth">— Founder, D2C retail brand</p>
+        </div>
+        <div class="svd-acts">
+          <button class="bp" onclick="goTo('contact')">Build My Website →</button>
+          <button class="bs" onclick="goTo('contact')">Get a Quote</button>
+        </div>
+      </div>
+      <div class="svd-card">
+        <div class="svd-ch">
+          <div class="svd-ico">🌐</div>
+          <div><div class="svd-ch-title">Web Project Dashboard</div><div class="svd-ch-sub">Current build — Sprint 3/5</div></div>
+          <span class="svd-badge">In Progress</span>
+        </div>
+        <div class="svd-mets">
+          <div class="svd-met"><div class="svd-met-v">&lt;2s</div><div class="svd-met-l">Load Time</div><div class="svd-met-c">↑ Always</div></div>
+          <div class="svd-met"><div class="svd-met-v">5wk</div><div class="svd-met-l">Avg. Delivery</div><div class="svd-met-c">↑ On time</div></div>
+          <div class="svd-met"><div class="svd-met-v">1M+</div><div class="svd-met-l">Scale Ready</div><div class="svd-met-c">↑ No limits</div></div>
+        </div>
+        <div class="svd-feed">
+          <div class="svd-feed-lbl">Sprint Updates</div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Homepage design approved<div class="svd-feed-time">Today</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>CMS integration complete<div class="svd-feed-time">Yesterday</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Mobile QA passed — all pages<div class="svd-feed-time">2 days ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot warn"></div>Payment flow — final review<div class="svd-feed-time">Pending</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 — Business Automation -->
+  <section id="sv05" class="svd">
+    <div class="svd-nbg">05</div>
+    <div class="svd-inner rv">
+      <div>
+        <div class="svd-tag"><span class="svd-tag-n">Service 05</span> Ops</div>
+        <h2 class="svd-h2">Business <em>Automation</em></h2>
+        <p class="svd-lead">Every repetitive task your team does manually is costing you money. We map, connect, and automate your workflows end-to-end — saving the average team 14+ hours per week from day one.</p>
+        <div class="svd-pts">
+          <div class="svd-pt"><div class="svd-chk">✓</div>Automates data entry, reporting, and file management</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Sends automatic alerts to your team via Slack, email, or Teams</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Connects every tool you use — no manual data transfer</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Handles approval workflows end-to-end automatically</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Zero errors — unlike manual processes, it never forgets a step</div>
+        </div>
+        <div class="svd-quote">
+          <p class="svd-q-text">"We reclaimed 18 hours a week per team member. They now focus entirely on high-value work."</p>
+          <p class="svd-q-auth">— Operations Manager, logistics company</p>
+        </div>
+        <div class="svd-acts">
+          <button class="bp" onclick="goTo('contact')">Automate My Workflows →</button>
+          <button class="bs" onclick="goTo('contact')">Book a Discovery Call</button>
+        </div>
+      </div>
+      <div class="svd-card">
+        <div class="svd-ch">
+          <div class="svd-ico">⚡</div>
+          <div><div class="svd-ch-title">Automation Dashboard</div><div class="svd-ch-sub">12 active workflows running</div></div>
+          <span class="svd-badge">Running</span>
+        </div>
+        <div class="svd-mets">
+          <div class="svd-met"><div class="svd-met-v">14h</div><div class="svd-met-l">Saved/Week</div><div class="svd-met-c">↑ Per team</div></div>
+          <div class="svd-met"><div class="svd-met-v">0</div><div class="svd-met-l">Manual Errors</div><div class="svd-met-c">↑ Zero</div></div>
+          <div class="svd-met"><div class="svd-met-v">3×</div><div class="svd-met-l">Speed Gain</div><div class="svd-met-c">↑ Avg.</div></div>
+        </div>
+        <div class="svd-feed">
+          <div class="svd-feed-lbl">Workflow Log</div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Invoice generated — auto-sent<div class="svd-feed-time">2 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Lead synced to CRM<div class="svd-feed-time">8 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Weekly report emailed to team<div class="svd-feed-time">1 hr ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Approval workflow completed<div class="svd-feed-time">2 hr ago</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 — Custom AI Solutions -->
+  <section id="sv06" class="svd">
+    <div class="svd-nbg">06</div>
+    <div class="svd-inner rv">
+      <div>
+        <div class="svd-tag"><span class="svd-tag-n">Service 06</span> AI</div>
+        <h2 class="svd-h2">Custom <em>AI Solutions</em></h2>
+        <p class="svd-lead">Off-the-shelf AI doesn't understand your business. We build bespoke AI systems trained on your data — giving you a competitive edge no one can replicate with a generic tool.</p>
+        <div class="svd-pts">
+          <div class="svd-pt"><div class="svd-chk">✓</div>Trained on your proprietary data and business logic</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Integrates with your existing stack — no rip-and-replace</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Fine-tuned models for classification, generation, or prediction</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Fully owned by you — no ongoing API dependency</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Deployed with monitoring, retraining pipelines, and full docs</div>
+        </div>
+        <div class="svd-quote">
+          <p class="svd-q-text">"Our AI now handles 70% of our document processing. Accuracy went from 91% to 99.2%."</p>
+          <p class="svd-q-auth">— CTO, legal tech company</p>
+        </div>
+        <div class="svd-acts">
+          <button class="bp" onclick="goTo('contact')">Discuss My Use Case →</button>
+          <button class="bs" onclick="goTo('products')">Explore AI Products</button>
+        </div>
+      </div>
+      <div class="svd-card">
+        <div class="svd-ch">
+          <div class="svd-ico">🤖</div>
+          <div><div class="svd-ch-title">Custom AI Model</div><div class="svd-ch-sub">Inference — 99.2% accuracy</div></div>
+          <span class="svd-badge">Deployed</span>
+        </div>
+        <div class="svd-mets">
+          <div class="svd-met"><div class="svd-met-v">99.2%</div><div class="svd-met-l">Accuracy</div><div class="svd-met-c">↑ Fine-tuned</div></div>
+          <div class="svd-met"><div class="svd-met-v">100%</div><div class="svd-met-l">Ownership</div><div class="svd-met-c">↑ You own it</div></div>
+          <div class="svd-met"><div class="svd-met-v">0</div><div class="svd-met-l">API Fees</div><div class="svd-met-c">↑ Forever</div></div>
+        </div>
+        <div class="svd-feed">
+          <div class="svd-feed-lbl">Model Activity</div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Document classified — contract<div class="svd-feed-time">1 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Prediction batch — 500 records<div class="svd-feed-time">12 min ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Retraining pipeline — complete<div class="svd-feed-time">1 hr ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot warn"></div>Drift alert — minor — reviewed<div class="svd-feed-time">6 hr ago</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 — Mobile App Development -->
+  <section id="sv07" class="svd">
+    <div class="svd-nbg">07</div>
+    <div class="svd-inner rv">
+      <div>
+        <div class="svd-tag"><span class="svd-tag-n">Service 07</span> Mobile</div>
+        <h2 class="svd-h2">Mobile App <em>Development</em></h2>
+        <p class="svd-lead">Native-quality iOS and Android apps from a single codebase. Designed to delight users, built to handle scale — and maintained by us after launch so you're never left alone.</p>
+        <div class="svd-pts">
+          <div class="svd-pt"><div class="svd-chk">✓</div>iOS &amp; Android from one codebase — half the cost, same quality</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Intuitive UX design — users figure it out in seconds</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Connects to payments, backends, and third-party APIs</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Fully tested before launch — zero critical bugs at go-live</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Ongoing maintenance and updates included post-launch</div>
+        </div>
+        <div class="svd-quote">
+          <p class="svd-q-text">"10,000 users in the first month. Zero crashes. The design was praised in our App Store reviews."</p>
+          <p class="svd-q-auth">— CEO, consumer app startup</p>
+        </div>
+        <div class="svd-acts">
+          <button class="bp" onclick="goTo('contact')">Build My App →</button>
+          <button class="bs" onclick="goTo('contact')">Get an Estimate</button>
+        </div>
+      </div>
+      <div class="svd-card">
+        <div class="svd-ch">
+          <div class="svd-ico">📱</div>
+          <div><div class="svd-ch-title">App Build — Sprint 4</div><div class="svd-ch-sub">4 weeks to launch</div></div>
+          <span class="svd-badge">On Track</span>
+        </div>
+        <div class="svd-mets">
+          <div class="svd-met"><div class="svd-met-v">10K</div><div class="svd-met-l">Month 1 Users</div><div class="svd-met-c">↑ Record</div></div>
+          <div class="svd-met"><div class="svd-met-v">4wk</div><div class="svd-met-l">Avg. Delivery</div><div class="svd-met-c">↑ Fast</div></div>
+          <div class="svd-met"><div class="svd-met-v">0</div><div class="svd-met-l">Launch Bugs</div><div class="svd-met-c">↑ Always</div></div>
+        </div>
+        <div class="svd-feed">
+          <div class="svd-feed-lbl">Build Log</div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Push notifications — shipped<div class="svd-feed-time">Today</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Payment flow — QA passed<div class="svd-feed-time">Yesterday</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Onboarding screens — approved<div class="svd-feed-time">2 days ago</div></div>
+          <div class="svd-feed-item"><div class="svd-dot warn"></div>Analytics SDK — integrating<div class="svd-feed-time">In progress</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 — Tech Audit & Strategy -->
+  <section id="sv08" class="svd">
+    <div class="svd-nbg">08</div>
+    <div class="svd-inner rv">
+      <div>
+        <div class="svd-tag"><span class="svd-tag-n">Service 08</span> Strategy</div>
+        <h2 class="svd-h2">Tech Audit <em>&amp; Strategy</em></h2>
+        <p class="svd-lead">Not sure if your tech is working for you or against you? We audit your entire stack, identify what's costing you money, and hand you a prioritised roadmap to modernise it fast — no jargon, no upselling.</p>
+        <div class="svd-pts">
+          <div class="svd-pt"><div class="svd-chk">✓</div>Full review of your current technology and infrastructure</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Clear, jargon-free report you can act on immediately</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>12-month modernisation roadmap with prioritised quick wins</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Identifies cost savings — often pays for itself in week one</div>
+          <div class="svd-pt"><div class="svd-chk">✓</div>Completely honest — we'll tell you if you don't need to spend</div>
+        </div>
+        <div class="svd-quote">
+          <p class="svd-q-text">"The audit found £40k of annual waste in tools we didn't need. Best investment we made."</p>
+          <p class="svd-q-auth">— CFO, professional services firm</p>
+        </div>
+        <div class="svd-acts">
+          <button class="bp" onclick="goTo('contact')">Book a Free Audit Call →</button>
+          <button class="bs" onclick="goTo('contact')">Learn More</button>
+        </div>
+      </div>
+      <div class="svd-card">
+        <div class="svd-ch">
+          <div class="svd-ico">📊</div>
+          <div><div class="svd-ch-title">Tech Audit Report</div><div class="svd-ch-sub">Delivered in 48 hours</div></div>
+          <span class="svd-badge">Free First Call</span>
+        </div>
+        <div class="svd-mets">
+          <div class="svd-met"><div class="svd-met-v">1hr</div><div class="svd-met-l">Discovery Call</div><div class="svd-met-c">↑ Free</div></div>
+          <div class="svd-met"><div class="svd-met-v">48h</div><div class="svd-met-l">Full Report</div><div class="svd-met-c">↑ Delivered</div></div>
+          <div class="svd-met"><div class="svd-met-v">100%</div><div class="svd-met-l">Unbiased</div><div class="svd-met-c">↑ Always</div></div>
+        </div>
+        <div class="svd-feed">
+          <div class="svd-feed-lbl">What's Included</div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Full stack review &amp; scoring<div class="svd-feed-time">Included</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Security vulnerability check<div class="svd-feed-time">Included</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>12-month roadmap document<div class="svd-feed-time">Included</div></div>
+          <div class="svd-feed-item"><div class="svd-dot on"></div>Q&amp;A call with our engineers<div class="svd-feed-time">Included</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guarantee strip -->
+  <div class="svguarantee">
+    <div class="svg-inner rv">
+      <div class="svg-item"><div class="svg-ico">🚀</div><h4>2-Week Sprints</h4><p>You see working results fast — not wait months for things to happen.</p></div>
+      <div class="svg-item"><div class="svg-ico">🔒</div><h4>Security First</h4><p>Every system we build has enterprise-grade security built in from day one.</p></div>
+      <div class="svg-item"><div class="svg-ico">📈</div><h4>Built to Scale</h4><p>Whatever we build today will still work perfectly when you're 10× bigger.</p></div>
+      <div class="svg-item"><div class="svg-ico">🤝</div><h4>Always There</h4><p>We don't disappear after delivery. We're your long-term technology partner.</p></div>
+    </div>
+  </div>
 
   <section class="cta-band"><div class="cta-grid"></div><div class="cta-glow"></div>
     <h2>Not sure which service<br>you <em>need?</em></h2>
