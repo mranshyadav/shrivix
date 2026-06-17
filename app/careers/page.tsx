@@ -3,7 +3,19 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 import ApplyModal from '@/components/ApplyModal'
 
-export const metadata: Metadata = { title: 'Careers' }
+export const metadata: Metadata = {
+  title: 'Careers at Shrivix — Join Our AI & Engineering Team',
+  description: 'Join Shrivix and help build AI systems transforming how businesses operate. We are hiring engineers, sales, and operations professionals across India.',
+  keywords: ['careers Shrivix', 'AI jobs India', 'software engineer jobs India', 'tech startup jobs', 'remote jobs India'],
+  alternates: { canonical: 'https://shrivix.com/careers' },
+  openGraph: {
+    title: 'Careers at Shrivix — Join Our AI & Engineering Team',
+    description: 'Build the future of AI-powered business. Join our team of engineers and operators making intelligent automation accessible to every business.',
+    url: 'https://shrivix.com/careers',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', title: 'Careers at Shrivix', description: 'Build the future of AI-powered business.' },
+}
 
 const ArrowIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

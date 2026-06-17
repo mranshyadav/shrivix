@@ -2,7 +2,19 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = { title: 'About' }
+export const metadata: Metadata = {
+  title: 'About Shrivix — AI-First Technology Company',
+  description: 'Shrivix is an AI-first technology company building intelligent agents, automation systems, and world-class software for businesses across India and globally.',
+  keywords: ['about Shrivix', 'AI company India', 'technology partner', 'AI automation company', 'software engineering India'],
+  alternates: { canonical: 'https://shrivix.com/about' },
+  openGraph: {
+    title: 'About Shrivix — AI-First Technology Company',
+    description: 'Not just a vendor — your technology partner. Learn how Shrivix helps businesses scale with AI agents, automation, and world-class software.',
+    url: 'https://shrivix.com/about',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', title: 'About Shrivix — AI-First Technology Company', description: 'Not just a vendor — your technology partner.' },
+}
 
 const ArrowIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

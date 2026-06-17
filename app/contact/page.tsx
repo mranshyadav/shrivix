@@ -2,7 +2,19 @@ import type { Metadata } from 'next'
 import Footer from '@/components/Footer'
 import ContactForm from '@/components/ContactForm'
 
-export const metadata: Metadata = { title: 'Contact' }
+export const metadata: Metadata = {
+  title: 'Contact Shrivix — Book a Free Discovery Call',
+  description: 'Ready to build? Contact Shrivix to discuss your AI agent, automation, or software project. Book a free discovery call — we respond within 24 hours.',
+  keywords: ['contact Shrivix', 'book discovery call', 'AI consultation India', 'software project quote', 'hire AI company'],
+  alternates: { canonical: 'https://shrivix.com/contact' },
+  openGraph: {
+    title: 'Contact Shrivix — Book a Free Discovery Call',
+    description: 'Tell us what you are building. We will scope it, price it, and deliver it properly. Free 30-minute discovery call.',
+    url: 'https://shrivix.com/contact',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image', title: 'Contact Shrivix', description: 'Book a free discovery call. We respond within 24 hours.' },
+}
 
 export default function ContactPage() {
   return (
