@@ -1,23 +1,23 @@
 import type { Metadata } from 'next'
-import { Instrument_Serif, Manrope } from 'next/font/google'
+import { Lora, Inter } from 'next/font/google'
 import './globals.css'
 import '../styles.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
 
-const instrumentSerif = Instrument_Serif({
-  weight: ['400'],
+const lora = Lora({
+  weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
-  variable: '--font-instrument-serif',
+  variable: '--font-lora',
   display: 'swap',
 })
 
-const manrope = Manrope({
+const inter = Inter({
   weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],
-  variable: '--font-manrope',
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -70,7 +70,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${lora.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"

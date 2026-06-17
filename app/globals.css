@@ -16,6 +16,6 @@
   --color-accent-dk: #1240b0;
   --color-accent-bg: #eef2fd;
   --color-warm: #f5f0e8;
-  --font-serif: var(--font-instrument-serif), Georgia, serif;
-  --font-sans: var(--font-manrope), sans-serif;
+  --font-serif: var(--font-lora), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 }
