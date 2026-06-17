@@ -67,7 +67,8 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES GRID */}
-      <section className="sp-grid-section" style={{padding:'80px 48px',background:'var(--bg)'}}>
+      <section className="sp-grid-section">
+        <div className="sec-body">
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:'48px',gap:'20px',flexWrap:'wrap'}} className="rv">
           <div><div className="lbl">What We Build</div><h2 className="h2">End-to-end <em>technology</em><br />services</h2></div>
           <p style={{fontSize:'15px',color:'var(--muted)',maxWidth:'320px',lineHeight:1.7}}>From AI agents to full-scale software — everything your business needs to operate at its peak.</p>
@@ -87,10 +88,11 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+        </div>
       </section>
 
       {/* PRODUCTS PREVIEW */}
-      <section className="pp-section" style={{padding:'80px 48px',background:'var(--white)',borderTop:'1px solid var(--border)',borderBottom:'1px solid var(--border)'}}>
+      <section className="pp-section">
         <div className="pp-wrap">
           <div className="pp-left rv">
             <div className="lbl">Our Products</div>
@@ -152,6 +154,7 @@ export default function HomePage() {
 
       {/* WHY SHRIVIX */}
       <section className="home-why">
+        <div className="sec-body">
         <div className="hw-header rv">
           <div>
             <div className="lbl">Why Shrivix</div>
@@ -173,10 +176,12 @@ export default function HomePage() {
             <Link href="/contact" className="bp" style={{marginTop:'20px',background:'rgba(255,255,255,.12)',color:'#fff',border:'1px solid rgba(255,255,255,.2)'}}>Book Free Call →</Link>
           </div>
         </div>
+        </div>
       </section>
 
       {/* PROCESS */}
       <section className="home-process">
+        <div className="sec-body">
         <div className="hproc-header rv">
           <div className="lbl">Our Process</div>
           <h2 className="h2">From idea to <em>live</em> in weeks</h2>
@@ -187,6 +192,7 @@ export default function HomePage() {
           <div className="hproc-step rv d1"><div className="hproc-dot"><div className="hproc-dot-n">02</div></div><h4>Strategy &amp; Design</h4><p>We architect the right solution — technology, UX, and integrations — with a fixed scope and price.</p></div>
           <div className="hproc-step rv d2"><div className="hproc-dot"><div className="hproc-dot-n">03</div></div><h4>Build &amp; Integrate</h4><p>Fast two-week sprints with working software every cycle. Seamless integration with your existing tools.</p></div>
           <div className="hproc-step rv d3"><div className="hproc-dot"><div className="hproc-dot-n">04</div></div><h4>Launch &amp; Scale</h4><p>Go live with confidence. We monitor, optimise, and scale continuously as your business grows.</p></div>
+        </div>
         </div>
       </section>
 
@@ -205,6 +211,7 @@ export default function HomePage() {
 
       {/* CLIENTS */}
       <section className="clients-section">
+        <div className="sec-body">
         <div className="clients-header rv">
           <div className="lbl" style={{justifyContent:'center'}}>Trusted By</div>
           <p>Businesses across industries rely on Shrivix to power their technology</p>
@@ -233,10 +240,12 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* TESTIMONIALS */}
       <section className="testi-section">
+        <div className="sec-body">
         <div className="testi-header rv">
           <div><div className="lbl">Client Reviews</div><h2 className="h2">Trusted by <em>ambitious</em><br />teams worldwide</h2></div>
           <p>Don&apos;t take our word for it — here&apos;s what our clients say about working with Shrivix and the results we&apos;ve delivered.</p>
@@ -283,6 +292,7 @@ export default function HomePage() {
           <div className="trat-fact"><span style={{fontSize:'20px'}}>🔄</span><span><strong>94%</strong> client retention rate</span></div>
           <div className="trat-sep" />
           <div className="trat-fact"><span style={{fontSize:'20px'}}>🌍</span><span>Clients across <strong>8 industries</strong></span></div>
+        </div>
         </div>
       </section>
 
