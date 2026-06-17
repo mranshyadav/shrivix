@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     title: 'Contact Shrivix — Book a Free Discovery Call',
     description: 'Tell us what you are building. We will scope it, price it, and deliver it properly. Free 30-minute discovery call.',
     url: 'https://shrivix.com/contact',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image', title: 'Contact Shrivix', description: 'Book a free discovery call. We respond within 24 hours.' },
 }

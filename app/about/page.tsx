@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     title: 'About Shrivix — AI-First Technology Company',
     description: 'Not just a vendor — your technology partner. Learn how Shrivix helps businesses scale with AI agents, automation, and world-class software.',
     url: 'https://shrivix.com/about',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image', title: 'About Shrivix — AI-First Technology Company', description: 'Not just a vendor — your technology partner.' },
 }

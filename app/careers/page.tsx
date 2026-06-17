@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     title: 'Careers at Shrivix — Join Our AI & Engineering Team',
     description: 'Build the future of AI-powered business. Join our team of engineers and operators making intelligent automation accessible to every business.',
     url: 'https://shrivix.com/careers',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image', title: 'Careers at Shrivix', description: 'Build the future of AI-powered business.' },
 }

@@ -11,13 +11,39 @@ export const metadata: Metadata = {
     title: 'AI Services — Custom Software, AI Agents & Automation | Shrivix',
     description: 'From AI voice agents to full SaaS platforms — Shrivix engineers intelligent automation and world-class software for modern businesses.',
     url: 'https://shrivix.com/services',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'AI Services — Custom Software, AI Agents & Automation | Shrivix',
     description: 'From AI voice agents to full SaaS platforms — Shrivix engineers intelligent automation and world-class software for modern businesses.',
   },
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How long does a typical project take?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Most projects run 4–6 weeks end to end. AI agents and automations can be live in 1–2 weeks. We give you a fixed timeline upfront — and we stick to it.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you work with businesses outside India?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes — we serve clients across Asia, the Middle East, and globally. Our team is India-based, which means world-class engineering at competitive rates.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'What happens after the project is delivered?',
+      acceptedAnswer: { '@type': 'Answer', text: 'We don\'t hand you something and disappear. Every engagement includes onboarding, documentation, and an ongoing support option. Most clients stay with us long-term.' },
+    },
+    {
+      '@type': 'Question',
+      name: 'How is pricing structured?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Fixed-scope, fixed-price for most projects. No hourly billing surprises. We scope your project, give you a number, and that\'s what you pay. AI agents have optional monthly maintenance plans.' },
+    },
+  ],
 }
 
 const ArrowIcon = () => (
@@ -236,6 +262,10 @@ const faqs = [
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* PAGE HEADER */}
       <div className="svc-ph">
         <div className="svc-ph-inner">
