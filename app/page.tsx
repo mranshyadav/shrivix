@@ -4,7 +4,18 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Shrivix — AI Agents & Intelligent Automation for Modern Businesses',
+  description: 'Shrivix builds AI agents, intelligent automation pipelines, and enterprise software that help businesses scale faster. From AI cold calling to SaaS development and custom solutions.',
   alternates: { canonical: 'https://shrivix.com' },
+  openGraph: {
+    title: 'Shrivix — AI Agents & Intelligent Automation for Modern Businesses',
+    description: 'AI agents, intelligent automation, and world-class software for modern businesses.',
+    url: 'https://shrivix.com',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shrivix — AI Agents & Intelligent Automation',
+    description: 'AI agents, intelligent automation, and world-class software for modern businesses.',
+  },
 }
 
 const ArrowIcon = () => (

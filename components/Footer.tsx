@@ -75,8 +75,6 @@ export default function Footer() {
       <div className="ft-bottom">
         <span className="ft-copy">© {year} Shrivix Technologies. All rights reserved.</span>
         <div className="ft-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
           <span className="ft-made">Made with ♥ in India</span>
         </div>
       </div>
