@@ -56,7 +56,15 @@ const jsonLd = {
       '@id': 'https://shrivix.com/#organization',
       name: 'Shrivix',
       url: 'https://shrivix.com',
+      logo: 'https://shrivix.com/logo.png',
       description: 'Shrivix builds AI agents, intelligent automation, and enterprise software for modern businesses.',
+      email: 'hello@shrivix.com',
+      telephone: '+917669449009',
+      address: { '@type': 'PostalAddress', addressCountry: 'IN' },
+      sameAs: [
+        'https://linkedin.com/company/shrivix',
+        'https://x.com/shrivix',
+      ],
     },
     {
       '@type': 'WebSite',
@@ -64,6 +72,32 @@ const jsonLd = {
       url: 'https://shrivix.com',
       name: 'Shrivix',
       publisher: { '@id': 'https://shrivix.com/#organization' },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: 'https://shrivix.com/services',
+        'query-input': 'required name=search_term_string',
+      },
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': 'https://shrivix.com/#service',
+      name: 'Shrivix',
+      url: 'https://shrivix.com',
+      provider: { '@id': 'https://shrivix.com/#organization' },
+      serviceType: ['AI Agents', 'Workflow Automation', 'SaaS Development', 'Mobile App Development', 'Custom Software', 'IT Consulting'],
+      areaServed: { '@type': 'Country', name: 'India' },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Shrivix Services',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Cold Calling Agent' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'AI Email Outreach Agent' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Workflow Automation' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SaaS Development' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Mobile App Development' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Software Solutions' } },
+        ],
+      },
     },
   ],
 }

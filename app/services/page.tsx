@@ -2,7 +2,23 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
 
-export const metadata: Metadata = { title: 'Services — Shrivix' }
+export const metadata: Metadata = {
+  title: 'AI Services — Custom Software, AI Agents & Automation',
+  description: 'Shrivix offers AI cold calling agents, email automation, workflow automation, SaaS development, mobile apps, and custom software. Book a free consultation today.',
+  keywords: ['AI agents', 'workflow automation', 'AI cold calling', 'email automation', 'SaaS development', 'mobile app development', 'custom software India'],
+  alternates: { canonical: 'https://shrivix.com/services' },
+  openGraph: {
+    title: 'AI Services — Custom Software, AI Agents & Automation | Shrivix',
+    description: 'From AI voice agents to full SaaS platforms — Shrivix engineers intelligent automation and world-class software for modern businesses.',
+    url: 'https://shrivix.com/services',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Services — Custom Software, AI Agents & Automation | Shrivix',
+    description: 'From AI voice agents to full SaaS platforms — Shrivix engineers intelligent automation and world-class software for modern businesses.',
+  },
+}
 
 const ArrowIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

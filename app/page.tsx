@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Shrivix — AI Agents & Intelligent Automation for Modern Businesses',
+  alternates: { canonical: 'https://shrivix.com' },
 }
 
 const ArrowIcon = () => (
