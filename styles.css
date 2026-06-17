@@ -4,7 +4,7 @@
   --bg:#f9f8f6;--white:#ffffff;--surface:#f2f0ec;
   --border:#e4dfd7;--border-lt:#ede9e3;
   --ink:#0f0e0d;--ink2:#3a3732;--muted:#7a7571;--muted-lt:#b0aca7;
-  --accent:#1a50d4;--accent-dk:#1240b0;--accent-bg:#eef2fd;--accent-bd:#c5d3f7;
+  --accent:#1a50d4;--accent-dk:#1240b0;--accent-bg:#eef2fd;--accent-bd:#c5d3f7;--accent-text:#1a50d4;
   --warm:#f5f0e8;
   --serif:var(--font-lora,'Lora'),Georgia,serif;
   --sans:var(--font-inter,'Inter'),system-ui,sans-serif;
