@@ -1,18 +1,42 @@
 'use client'
 import { useState } from 'react'
+import { sendContactEmail } from '@/app/actions/contact'
 
 const chips = ['📞 AI Calling','✉️ Email Agent','⚡ Automation','📱 Mobile App','🌐 Web Dev','🔧 Custom','💡 Consultation']
 
 export default function ContactForm() {
   const [selected, setSelected] = useState<string[]>([])
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const toggle = (c: string) =>
     setSelected(s => s.includes(c) ? s.filter(x => x !== c) : [...s, c])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+
+    const form = e.currentTarget
+    const data = {
+      firstName: (form.elements.namedItem('firstName') as HTMLInputElement).value,
+      lastName: (form.elements.namedItem('lastName') as HTMLInputElement).value,
+      email: (form.elements.namedItem('email') as HTMLInputElement).value,
+      company: (form.elements.namedItem('company') as HTMLInputElement).value,
+      services: selected,
+      budget: (form.elements.namedItem('budget') as HTMLSelectElement).value,
+      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+    }
+
+    const result = await sendContactEmail(data)
+    setLoading(false)
+
+    if (result.ok) {
+      setSubmitted(true)
+    } else {
+      setError(result.error ?? 'Something went wrong. Please try again.')
+    }
   }
 
   return (
@@ -22,11 +46,11 @@ export default function ContactForm() {
       {!submitted ? (
         <form onSubmit={handleSubmit}>
           <div className="frow">
-            <div className="fgrp"><label className="flbl">First Name *</label><input type="text" className="finp" placeholder="Rahul" required /></div>
-            <div className="fgrp"><label className="flbl">Last Name *</label><input type="text" className="finp" placeholder="Mehta" required /></div>
+            <div className="fgrp"><label className="flbl">First Name *</label><input name="firstName" type="text" className="finp" placeholder="Rahul" required /></div>
+            <div className="fgrp"><label className="flbl">Last Name *</label><input name="lastName" type="text" className="finp" placeholder="Mehta" required /></div>
           </div>
-          <div className="fgrp"><label className="flbl">Work Email *</label><input type="email" className="finp" placeholder="rahul@company.com" required /></div>
-          <div className="fgrp"><label className="flbl">Company</label><input type="text" className="finp" placeholder="Your company name" /></div>
+          <div className="fgrp"><label className="flbl">Work Email *</label><input name="email" type="email" className="finp" placeholder="rahul@company.com" required /></div>
+          <div className="fgrp"><label className="flbl">Company</label><input name="company" type="text" className="finp" placeholder="Your company name" /></div>
           <div className="fgrp">
             <label className="flbl">Interested in</label>
             <div className="chips">
@@ -37,7 +61,7 @@ export default function ContactForm() {
           </div>
           <div className="fgrp">
             <label className="flbl">Budget Range</label>
-            <select className="fsel">
+            <select name="budget" className="fsel">
               <option value="" disabled>Select a range</option>
               <option>Under ₹50,000</option>
               <option>₹50,000 – ₹2,00,000</option>
@@ -47,10 +71,13 @@ export default function ContactForm() {
               <option>Let&apos;s discuss</option>
             </select>
           </div>
-          <div className="fgrp"><label className="flbl">Tell us about your project *</label><textarea className="ftxt" placeholder="Describe what you're looking to build, automate, or improve..." required /></div>
-          <button type="submit" className="fsub">
-            Send Message{' '}
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <div className="fgrp"><label className="flbl">Tell us about your project *</label><textarea name="message" className="ftxt" placeholder="Describe what you're looking to build, automate, or improve..." required /></div>
+          {error && (
+            <p style={{ color: '#c0392b', fontSize: '14px', margin: '0 0 12px', lineHeight: 1.5 }}>{error}</p>
+          )}
+          <button type="submit" className="fsub" disabled={loading}>
+            {loading ? 'Sending…' : 'Send Message'}{' '}
+            {!loading && <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>}
           </button>
           <p className="fnote">We never share your data. By submitting you agree to our Privacy Policy.</p>
         </form>
