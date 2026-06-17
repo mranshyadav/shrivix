@@ -1,0 +1,13 @@
+# Next.js
+.next/
+node_modules/
+out/
+build/
+
+# Misc
+.DS_Store
+*.pem
+.env*
+!.env.example
+npm-debug.log*
+.vercel
