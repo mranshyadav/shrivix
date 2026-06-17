@@ -37,14 +37,12 @@ export const metadata: Metadata = {
     siteName: 'Shrivix',
     title: 'Shrivix — AI Agents & Intelligent Automation',
     description: 'AI agents, intelligent automation, and enterprise software that help businesses scale faster.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Shrivix — AI Agents & Intelligent Automation',
     description: 'AI agents, intelligent automation, and enterprise software that help businesses scale faster.',
-    images: ['/og-image.png'],
   },
 }
 
