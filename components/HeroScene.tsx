@@ -232,11 +232,11 @@ export default function HeroScene({
       gl={{ antialias: true, alpha: true }}
       style={{ background: 'transparent' }}
     >
-      <ambientLight intensity={0.4} />
-      <pointLight position={[4, 4, 4]} intensity={30} color="#1a50d4" />
-      <pointLight position={[-4, -2, -4]} intensity={20} color="#6b3fff" />
-      <pointLight position={[0, 6, 2]} intensity={15} color="#ffffff" />
-      <pointLight position={[0, -5, 0]} intensity={8} color="#1a50d4" />
+      <ambientLight intensity={1.2} color="#f0f0f8" />
+      <pointLight position={[4, 4, 4]} intensity={18} color="#1a50d4" />
+      <pointLight position={[-4, -2, -4]} intensity={12} color="#6b3fff" />
+      <pointLight position={[0, 6, 2]} intensity={20} color="#ffffff" />
+      <pointLight position={[0, -5, 0]} intensity={6} color="#1a50d4" />
 
       <Particles />
       <SceneRoot mouseX={mouseX} mouseY={mouseY} />
