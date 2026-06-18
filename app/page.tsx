@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import HeroNew from '@/components/HeroNew'
 
 export const metadata: Metadata = {
   title: 'Shrivix — AI Agents & Intelligent Automation for Modern Businesses',
@@ -24,59 +25,10 @@ const ArrowIcon = () => (
   </svg>
 )
 
-const CheckIcon = () => (
-  <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-)
-
-const tickerItems = [
-  'AI Cold Calling','Email Automation','Workflow Automation','Mobile Apps',
-  'Web Development','Business Operations AI','Custom Solutions','IT Consultation',
-  'SaaS Development','AI Agents',
-]
-
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section id="hero">
-        <div className="hero-glow" />
-        <div className="hero-in">
-          <div className="hbadge"><div className="bdot" />Now Accepting New Clients — 2025</div>
-          <h1 className="hero-h1">
-            Technology built to<br /><em>transform</em> <span className="dim">the way</span><br />you do business.
-          </h1>
-          <p className="hero-p">
-            Shrivix engineers AI agents, intelligent automation, and world-class software — so your business runs faster, smarter, and at scale around the clock.
-          </p>
-          <div className="hero-acts">
-            <Link href="/services" className="bp">Explore Services <ArrowIcon /></Link>
-            <Link href="/contact" className="bs">Book a Free Call</Link>
-          </div>
-          <div className="hero-proof">
-            <div className="pavs">
-              <div className="pav">R</div><div className="pav">P</div>
-              <div className="pav">A</div><div className="pav">K</div>
-            </div>
-            <span className="ptxt"><strong>50+ clients</strong> trust Shrivix</span>
-            <div className="psep" />
-            <span className="pstars">★★★★★</span>
-            <span className="prat"><strong>5.0</strong> avg. rating</span>
-          </div>
-          <div className="hstats">
-            <div className="hs"><div className="hs-n">50<sup>+</sup></div><div className="hs-l">Projects Delivered</div></div>
-            <div className="hs"><div className="hs-n">10<sup>×</sup></div><div className="hs-l">Average ROI</div></div>
-            <div className="hs"><div className="hs-n">8</div><div className="hs-l">Industries Served</div></div>
-            <div className="hs"><div className="hs-n">24/7</div><div className="hs-l">Agent Uptime</div></div>
-          </div>
-        </div>
-        <div className="svc-ticker">
-          <div className="svc-ticker-track">
-            {[...tickerItems, ...tickerItems].map((item, i) => (
-              <span key={i} className="svc-ticker-item">{item} <span className="svc-ticker-sep">✦</span></span>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HeroNew />
 
       {/* SERVICES GRID */}
       <section className="sp-grid-section">
