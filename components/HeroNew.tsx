@@ -1,249 +1,319 @@
 'use client'
-import { useRef, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
-
-const HeroScene = dynamic(() => import('./HeroScene'), {
-  ssr: false,
-  loading: () => <div className="hero3d-fallback" />,
-})
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
-const FADE_UP = {
-  hidden: { opacity: 0, y: 32 },
-  show: (i: number) => ({
-    opacity: 1, y: 0,
-    transition: { delay: i * 0.1, duration: 0.7, ease: EASE },
-  }),
+function Counter({
+  to,
+  fmt = (n: number) => String(n),
+  delay = 0,
+}: {
+  to: number
+  fmt?: (n: number) => string
+  delay?: number
+}) {
+  const [val, setVal] = useState(0)
+  useEffect(() => {
+    const t = setTimeout(() => {
+      const start = performance.now()
+      const dur = 1600
+      const tick = (now: number) => {
+        const p = Math.min((now - start) / dur, 1)
+        const e = 1 - Math.pow(1 - p, 3)
+        setVal(Math.round(to * e))
+        if (p < 1) requestAnimationFrame(tick)
+      }
+      requestAnimationFrame(tick)
+    }, delay)
+    return () => clearTimeout(t)
+  }, [to, delay])
+  return <>{fmt(val)}</>
 }
 
-const INDICATORS = [
-  { label: 'SOC 2 Certified', color: '#22c55e' },
-  { label: '99.99% Uptime', color: '#1a50d4' },
-  { label: 'ISO 27001', color: '#7c3aed' },
-]
+const SPARK = {
+  latency:    '0,48 12,44 24,42 36,36 48,30 60,28 72,20 84,14 96,10 100,8',
+  accuracy:   '0,30 12,27 24,25 36,22 48,20 60,21 72,17 84,15 96,13 100,12',
+  throughput: '0,50 12,46 24,42 36,36 48,30 60,24 72,16 84,10 96,5  100,4',
+}
 
-const FLOAT_CARDS = [
-  {
-    ico: '🧠',
-    label: 'Neural Processing',
-    sub: '12ms inference',
-    dot: '#22c55e',
-    top: '12%', right: '-20px',
-    val: '99.4%', valLabel: 'Accuracy',
-  },
-  {
-    ico: '☁️',
-    label: 'Cloud Infrastructure',
-    sub: 'Auto-scaling',
-    dot: '#1a50d4',
-    top: '50%', right: '-28px',
-    val: '< 2ms', valLabel: 'Latency',
-  },
-  {
-    ico: '⚡',
-    label: 'AI Pipelines',
-    sub: '18 active streams',
-    dot: '#7c3aed',
-    bottom: '14%', right: '-16px',
-    val: '847', valLabel: 'Tasks/min',
-  },
+const ACTIVITIES = [
+  { c: '#34d399', ico: '✓', txt: 'Model v3.1 deployed to production', t: '2s ago' },
+  { c: '#60a5fa', ico: '↑', txt: 'Auto-scaled: 4 → 12 nodes', t: '1m ago' },
+  { c: '#34d399', ico: '✓', txt: 'Batch pipeline: 8,400 items complete', t: '4m ago' },
 ]
 
 const LOGOS = ['Accenture', 'Infosys', 'TechMahindra', 'Wipro', 'HCL', 'Cognizant', 'Deloitte', 'IBM', 'Oracle', 'SAP']
 
 const STATS = [
-  { n: '250+', l: 'Projects Delivered', accent: '#1a50d4' },
-  { n: '98%',  l: 'Client Satisfaction', accent: '#22c55e' },
-  { n: '50+',  l: 'Technology Experts', accent: '#7c3aed' },
-  { n: '15+',  l: 'Countries Served', accent: '#06b6d4' },
+  { n: '250+', l: 'Projects Delivered', c: '#60a5fa' },
+  { n: '98%',  l: 'Client Satisfaction', c: '#34d399' },
+  { n: '50+',  l: 'Technology Experts',  c: '#a78bfa' },
+  { n: '15+',  l: 'Countries Served',    c: '#22d3ee' },
 ]
 
+function Sparkline({ points, color, id }: { points: string; color: string; id: string }) {
+  return (
+    <svg className="hd-spark" viewBox="0 0 100 56" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor={color} stopOpacity="0.25" />
+          <stop offset="100%" stopColor={color} stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      <polygon points={`0,56 ${points} 100,56`} fill={`url(#${id})`} />
+      <polyline points={points} fill="none" stroke={color} strokeWidth="1.6"
+        strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 export default function HeroNew() {
-  const mouseX = useRef(0)
-  const mouseY = useRef(0)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [prog, setProg] = useState(0)
 
   useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      const el = sectionRef.current
-      if (!el) return
-      const r = el.getBoundingClientRect()
-      mouseX.current = ((e.clientX - r.left) / r.width  - 0.5) * 2
-      mouseY.current = ((e.clientY - r.top)  / r.height - 0.5) * 2
-    }
-    window.addEventListener('mousemove', onMove)
-    return () => window.removeEventListener('mousemove', onMove)
+    const t = setTimeout(() => {
+      let p = 0
+      const id = setInterval(() => {
+        p += 1.4
+        setProg(Math.min(p, 78))
+        if (p >= 78) clearInterval(id)
+      }, 20)
+      return () => clearInterval(id)
+    }, 1300)
+    return () => clearTimeout(t)
   }, [])
 
   return (
     <>
-      {/* ── Hero ──────────────────────────────────────── */}
-      <section className="hn-root" ref={sectionRef}>
-        {/* Background effects */}
-        <div className="hn-bg-grid" />
-        <div className="hn-blob1" />
-        <div className="hn-blob2" />
-        <div className="hn-blob3" />
+      {/* ── Hero ──────────────────────────────────────────── */}
+      <section className="hd-root">
+        <div className="hd-aurora" />
+        <div className="hd-grid" />
 
-        <div className="hn-inner">
-          {/* ── Left ─────────────────────────────────── */}
-          <div className="hn-left">
-            <motion.div
-              custom={0} variants={FADE_UP} initial="hidden" animate="show"
-              className="hn-tag"
+        <div className="hd-inner">
+
+          {/* ── Left col ─────────────────────────────────── */}
+          <div className="hd-left">
+            <motion.div className="hd-eyebrow"
+              initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, ease: EASE }}
             >
-              <span className="hn-tag-dot" />
-              AI × Infrastructure × Intelligence
+              <span className="hd-pulse" />
+              AI Infrastructure Platform
             </motion.div>
 
-            <motion.h1
-              custom={1} variants={FADE_UP} initial="hidden" animate="show"
-              className="hn-h1"
+            <motion.h1 className="hd-h1"
+              initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: EASE }}
             >
-              Engineering<br />
-              <span className="hn-h1-em">Tomorrow&apos;s</span><br />
-              Digital Infrastructure
+              The Intelligence<br />
+              <span className="hd-grad">Layer</span> for the<br />
+              Modern Enterprise
             </motion.h1>
 
-            <motion.p
-              custom={2} variants={FADE_UP} initial="hidden" animate="show"
-              className="hn-sub"
+            <motion.p className="hd-sub"
+              initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: EASE }}
             >
-              We architect the intelligent systems that power enterprise growth — from autonomous AI agents and cloud infrastructure to full-scale software that operates 24 / 7 without limits.
+              We architect AI agents, cloud infrastructure, and enterprise software that operates
+              autonomously — built for teams scaling from startup to Fortune 500.
             </motion.p>
 
-            <motion.div
-              custom={3} variants={FADE_UP} initial="hidden" animate="show"
-              className="hn-acts"
+            <motion.div className="hd-ctas"
+              initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: EASE }}
             >
-              <Link href="/contact" className="hn-btn-primary">
+              <Link href="/contact" className="hd-btn-p">
                 Book a Consultation
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </Link>
-              <Link href="/services" className="hn-btn-secondary">
-                View Our Work
-              </Link>
+              <Link href="/services" className="hd-btn-g">Explore Services</Link>
             </motion.div>
 
-            <motion.div
-              custom={4} variants={FADE_UP} initial="hidden" animate="show"
-              className="hn-indicators"
+            <motion.div className="hd-pills"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.42, ease: EASE }}
             >
-              {INDICATORS.map((ind) => (
-                <div key={ind.label} className="hn-ind">
-                  <span className="hn-ind-dot" style={{ background: ind.color }} />
-                  {ind.label}
+              {([['#34d399','SOC 2 Certified'],['#60a5fa','99.99% Uptime'],['#a78bfa','ISO 27001']] as [string,string][]).map(([dot, lbl]) => (
+                <div key={lbl} className="hd-pill">
+                  <span className="hd-pill-dot" style={{ background: dot }} />
+                  {lbl}
                 </div>
               ))}
             </motion.div>
 
-            <motion.div
-              custom={5} variants={FADE_UP} initial="hidden" animate="show"
-              className="hn-proof"
+            <motion.div className="hd-proof"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.54, ease: EASE }}
             >
-              <div className="hn-avatars">
-                {['R','P','A','K','M'].map((l) => (
-                  <div key={l} className="hn-av">{l}</div>
-                ))}
+              <div className="hd-avs">
+                {['R','P','A','K','M'].map(l => <div key={l} className="hd-av">{l}</div>)}
               </div>
-              <div className="hn-proof-txt">
-                <strong>500+ enterprises</strong> trust our platform
-              </div>
-              <div className="hn-stars">★★★★★ <span>5.0</span></div>
+              <span className="hd-proof-txt"><strong>500+</strong> enterprises trust our platform</span>
+              <span className="hd-stars">★★★★★ <span>5.0</span></span>
             </motion.div>
           </div>
 
-          {/* ── Right: 3D engine ─────────────────────── */}
-          <motion.div
-            className="hn-right"
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: EASE, delay: 0.25 }}
+          {/* ── Right col: dashboard ─────────────────────── */}
+          <motion.div className="hd-right"
+            initial={{ opacity: 0, x: 36 }} animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
           >
-            <div className="hn-canvas-wrap">
-              <HeroScene mouseX={mouseX} mouseY={mouseY} />
+            {/* Top notification */}
+            <motion.div className="hd-notif"
+              initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.1, duration: 0.45, ease: EASE }}
+            >
+              <span className="hd-notif-dot" />
+              <span>Model v3.1 deployed successfully</span>
+              <span className="hd-notif-time">just now</span>
+            </motion.div>
 
-              {/* Floating stat cards */}
-              {FLOAT_CARDS.map((card) => (
-                <motion.div
-                  key={card.label}
-                  className="hn-float-card"
-                  style={{ top: card.top, bottom: card.bottom, right: card.right }}
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3.5 + Math.random() * 2, repeat: Infinity, ease: 'easeInOut' }}
-                >
-                  <div className="hn-fc-header">
-                    <span className="hn-fc-ico">{card.ico}</span>
-                    <div>
-                      <div className="hn-fc-label">{card.label}</div>
-                      <div className="hn-fc-sub">
-                        <span className="hn-fc-dot" style={{ background: card.dot }} />
-                        {card.sub}
-                      </div>
+            {/* Main panel */}
+            <div className="hd-panel">
+
+              {/* Window chrome */}
+              <div className="hd-chrome">
+                <div className="hd-wdots">
+                  <span className="hd-wd r"/><span className="hd-wd y"/><span className="hd-wd g"/>
+                </div>
+                <span className="hd-chrome-lbl">Shrivix Intelligence Platform</span>
+                <div className="hd-live">
+                  <span className="hd-live-dot"/>Live
+                </div>
+              </div>
+
+              {/* Metrics */}
+              <div className="hd-metrics">
+                <div className="hd-metric">
+                  <div className="hd-m-head">
+                    <span className="hd-m-lbl">API Latency</span>
+                    <span className="hd-delta dn">↓ 8%</span>
+                  </div>
+                  <div className="hd-m-val blue">
+                    <Counter to={12} fmt={n => `${n}ms`} delay={950} />
+                  </div>
+                  <Sparkline points={SPARK.latency} color="#60a5fa" id="s1" />
+                </div>
+                <div className="hd-msep"/>
+                <div className="hd-metric">
+                  <div className="hd-m-head">
+                    <span className="hd-m-lbl">Accuracy</span>
+                    <span className="hd-delta up">↑ 0.2%</span>
+                  </div>
+                  <div className="hd-m-val green">
+                    <Counter to={994} fmt={n => `${(n / 10).toFixed(1)}%`} delay={1050} />
+                  </div>
+                  <Sparkline points={SPARK.accuracy} color="#34d399" id="s2" />
+                </div>
+                <div className="hd-msep"/>
+                <div className="hd-metric">
+                  <div className="hd-m-head">
+                    <span className="hd-m-lbl">Throughput</span>
+                    <span className="hd-delta up">↑ 12%</span>
+                  </div>
+                  <div className="hd-m-val violet">
+                    <Counter to={847} fmt={n => `${n}/m`} delay={1150} />
+                  </div>
+                  <Sparkline points={SPARK.throughput} color="#a78bfa" id="s3" />
+                </div>
+              </div>
+
+              {/* Pipeline */}
+              <div className="hd-pipe">
+                <div className="hd-pipe-top">
+                  <span className="hd-pipe-lbl">AI Pipeline Processing</span>
+                  <span className="hd-pipe-pct">{Math.round(prog)}%</span>
+                </div>
+                <div className="hd-ptrack">
+                  <div className="hd-pfill" style={{ width: `${prog}%` }} />
+                </div>
+                <div className="hd-steps">
+                  {['Ingest','Vectorize','Inference','Output'].map((s, i) => (
+                    <div key={s} className={`hd-step${prog > i * 25 + 1 ? ' done' : ''}`}>
+                      <span className="hd-sdot"/>
+                      <span>{s}</span>
                     </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Activity */}
+              <div className="hd-act">
+                <div className="hd-act-head">Recent Activity</div>
+                {ACTIVITIES.map((a, i) => (
+                  <div key={i} className="hd-act-row">
+                    <span className="hd-act-ico" style={{ color: a.c }}>{a.ico}</span>
+                    <span className="hd-act-txt">{a.txt}</span>
+                    <span className="hd-act-t">{a.t}</span>
                   </div>
-                  <div className="hn-fc-metric">
-                    <span className="hn-fc-val">{card.val}</span>
-                    <span className="hn-fc-vlbl">{card.valLabel}</span>
-                  </div>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            {/* Floating uptime card */}
+            <motion.div className="hd-fcard"
+              animate={{ y: [0, -9, 0] }}
+              transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <div className="hd-fcard-ring">
+                <svg viewBox="0 0 40 40">
+                  <circle cx="20" cy="20" r="16" fill="none" stroke="rgba(52,211,153,.18)" strokeWidth="3.5"/>
+                  <circle cx="20" cy="20" r="16" fill="none" stroke="#34d399" strokeWidth="3.5"
+                    strokeDasharray="88 12" strokeLinecap="round"
+                    transform="rotate(-90 20 20)"/>
+                </svg>
+              </div>
+              <div>
+                <div className="hd-fcard-val">99.99%</div>
+                <div className="hd-fcard-lbl">Uptime SLA</div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          className="hn-scroll"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 0.6 }}
+        {/* Scroll mouse */}
+        <motion.div className="hd-mouse"
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+          transition={{ delay: 2.2, duration: 0.5 }}
         >
-          <motion.div
-            className="hn-scroll-dot"
-            animate={{ y: [0, 9, 0] }}
+          <motion.span className="hd-wheel"
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
           />
         </motion.div>
       </section>
 
-      {/* ── Trust Bar ─────────────────────────────────── */}
-      <section className="hn-trust">
-        <motion.div
-          className="hn-trust-head"
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+      {/* ── Trust Bar ─────────────────────────────────────── */}
+      <section className="hd-trust">
+        <motion.div className="hd-trust-lbl"
+          initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.55 }}
         >
           Powering enterprises across the globe
         </motion.div>
 
-        <div className="hn-marquee-wrap">
-          <div className="hn-marquee">
-            {[...LOGOS, ...LOGOS].map((name, i) => (
-              <div key={i} className="hn-logo-item">{name}</div>
+        <div className="hd-marq-wrap">
+          <div className="hd-marq">
+            {[...LOGOS, ...LOGOS].map((n, i) => (
+              <div key={i} className="hd-logo">{n}</div>
             ))}
           </div>
         </div>
 
-        <motion.div
-          className="hn-stats-row"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+        <motion.div className="hd-stats"
+          initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
         >
           {STATS.map((s, i) => (
-            <div key={s.l} className="hn-stat">
-              <div className="hn-stat-n" style={{ color: s.accent }}>{s.n}</div>
-              <div className="hn-stat-l">{s.l}</div>
-              {i < STATS.length - 1 && <div className="hn-stat-sep" />}
+            <div key={s.l} className="hd-stat">
+              <div className="hd-stat-n" style={{ color: s.c }}>{s.n}</div>
+              <div className="hd-stat-l">{s.l}</div>
+              {i < STATS.length - 1 && <div className="hd-stat-sep"/>}
             </div>
           ))}
         </motion.div>
