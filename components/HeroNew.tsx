@@ -9,31 +9,56 @@ const HeroScene = dynamic(() => import('./HeroScene'), {
   loading: () => <div className="hero3d-fallback" />,
 })
 
-const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number]
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
+
 const FADE_UP = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 32 },
   show: (i: number) => ({
     opacity: 1, y: 0,
-    transition: { delay: i * 0.12, duration: 0.65, ease: EASE },
+    transition: { delay: i * 0.1, duration: 0.7, ease: EASE },
   }),
 }
 
-const FLOAT_CARDS = [
-  { ico: '🤖', label: 'AI Neural Network', sub: 'Processing', dot: '#22c55e', top: '14%', right: '-18px', val: '99.8%', valLabel: 'Accuracy' },
-  { ico: '☁️', label: 'Cloud Infrastructure', sub: 'Scaling up', dot: '#3b82f6', top: '52%', right: '-24px', val: '< 2ms', valLabel: 'Latency' },
-  { ico: '⚡', label: 'Active Automations', sub: '14 pipelines', dot: '#a855f7', bottom: '16%', right: '-12px', val: '247', valLabel: 'Tasks Today' },
+const INDICATORS = [
+  { label: 'SOC 2 Certified', color: '#22c55e' },
+  { label: '99.99% Uptime', color: '#1a50d4' },
+  { label: 'ISO 27001', color: '#7c3aed' },
 ]
 
-const LOGOS = [
-  'Accenture','Infosys','TechMahindra','Wipro','HCL',
-  'Cognizant','Deloitte','IBM','Oracle','SAP',
+const FLOAT_CARDS = [
+  {
+    ico: '🧠',
+    label: 'Neural Processing',
+    sub: '12ms inference',
+    dot: '#22c55e',
+    top: '12%', right: '-20px',
+    val: '99.4%', valLabel: 'Accuracy',
+  },
+  {
+    ico: '☁️',
+    label: 'Cloud Infrastructure',
+    sub: 'Auto-scaling',
+    dot: '#1a50d4',
+    top: '50%', right: '-28px',
+    val: '< 2ms', valLabel: 'Latency',
+  },
+  {
+    ico: '⚡',
+    label: 'AI Pipelines',
+    sub: '18 active streams',
+    dot: '#7c3aed',
+    bottom: '14%', right: '-16px',
+    val: '847', valLabel: 'Tasks/min',
+  },
 ]
+
+const LOGOS = ['Accenture', 'Infosys', 'TechMahindra', 'Wipro', 'HCL', 'Cognizant', 'Deloitte', 'IBM', 'Oracle', 'SAP']
 
 const STATS = [
-  { n: '250+', l: 'Projects Delivered' },
-  { n: '98%',  l: 'Client Satisfaction' },
-  { n: '50+',  l: 'Tech Experts' },
-  { n: '15+',  l: 'Countries Served' },
+  { n: '250+', l: 'Projects Delivered', accent: '#1a50d4' },
+  { n: '98%',  l: 'Client Satisfaction', accent: '#22c55e' },
+  { n: '50+',  l: 'Technology Experts', accent: '#7c3aed' },
+  { n: '15+',  l: 'Countries Served', accent: '#06b6d4' },
 ]
 
 export default function HeroNew() {
@@ -46,7 +71,7 @@ export default function HeroNew() {
       const el = sectionRef.current
       if (!el) return
       const r = el.getBoundingClientRect()
-      mouseX.current = ((e.clientX - r.left) / r.width - 0.5) * 2
+      mouseX.current = ((e.clientX - r.left) / r.width  - 0.5) * 2
       mouseY.current = ((e.clientY - r.top)  / r.height - 0.5) * 2
     }
     window.addEventListener('mousemove', onMove)
@@ -55,75 +80,102 @@ export default function HeroNew() {
 
   return (
     <>
-      {/* ── Hero ───────────────────────────────────────── */}
+      {/* ── Hero ──────────────────────────────────────── */}
       <section className="hn-root" ref={sectionRef}>
-        {/* Background layers */}
+        {/* Background effects */}
         <div className="hn-bg-grid" />
-        <div className="hn-bg-glow1" />
-        <div className="hn-bg-glow2" />
-        <div className="hn-bg-glow3" />
+        <div className="hn-blob1" />
+        <div className="hn-blob2" />
+        <div className="hn-blob3" />
 
         <div className="hn-inner">
-          {/* ── Left content ─────────────────────────────── */}
+          {/* ── Left ─────────────────────────────────── */}
           <div className="hn-left">
-            <motion.div custom={0} variants={FADE_UP} initial="hidden" animate="show" className="hn-badge">
-              <span className="hn-badge-dot" />
-              Accepting New Clients — 2025
+            <motion.div
+              custom={0} variants={FADE_UP} initial="hidden" animate="show"
+              className="hn-tag"
+            >
+              <span className="hn-tag-dot" />
+              AI × Infrastructure × Intelligence
             </motion.div>
 
-            <motion.h1 custom={1} variants={FADE_UP} initial="hidden" animate="show" className="hn-h1">
-              Building Intelligent<br />
-              <span className="hn-h1-em">Digital Experiences</span><br />
-              for the Future
+            <motion.h1
+              custom={1} variants={FADE_UP} initial="hidden" animate="show"
+              className="hn-h1"
+            >
+              Engineering<br />
+              <span className="hn-h1-em">Tomorrow&apos;s</span><br />
+              Digital Infrastructure
             </motion.h1>
 
-            <motion.p custom={2} variants={FADE_UP} initial="hidden" animate="show" className="hn-sub">
-              We help startups, enterprises, and global businesses accelerate growth through AI, software development, cloud solutions, UI/UX design, and digital transformation.
+            <motion.p
+              custom={2} variants={FADE_UP} initial="hidden" animate="show"
+              className="hn-sub"
+            >
+              We architect the intelligent systems that power enterprise growth — from autonomous AI agents and cloud infrastructure to full-scale software that operates 24 / 7 without limits.
             </motion.p>
 
-            <motion.div custom={3} variants={FADE_UP} initial="hidden" animate="show" className="hn-acts">
+            <motion.div
+              custom={3} variants={FADE_UP} initial="hidden" animate="show"
+              className="hn-acts"
+            >
               <Link href="/contact" className="hn-btn-primary">
                 Book a Consultation
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
               </Link>
               <Link href="/services" className="hn-btn-secondary">
                 View Our Work
               </Link>
             </motion.div>
 
-            <motion.div custom={4} variants={FADE_UP} initial="hidden" animate="show" className="hn-proof">
+            <motion.div
+              custom={4} variants={FADE_UP} initial="hidden" animate="show"
+              className="hn-indicators"
+            >
+              {INDICATORS.map((ind) => (
+                <div key={ind.label} className="hn-ind">
+                  <span className="hn-ind-dot" style={{ background: ind.color }} />
+                  {ind.label}
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              custom={5} variants={FADE_UP} initial="hidden" animate="show"
+              className="hn-proof"
+            >
               <div className="hn-avatars">
                 {['R','P','A','K','M'].map((l) => (
                   <div key={l} className="hn-av">{l}</div>
                 ))}
               </div>
               <div className="hn-proof-txt">
-                <strong>500+ businesses</strong> trust us worldwide
+                <strong>500+ enterprises</strong> trust our platform
               </div>
-              <div className="hn-stars">
-                {'★★★★★'} <span>5.0</span>
-              </div>
+              <div className="hn-stars">★★★★★ <span>5.0</span></div>
             </motion.div>
           </div>
 
-          {/* ── Right: 3D canvas ─────────────────────────── */}
+          {/* ── Right: 3D engine ─────────────────────── */}
           <motion.div
             className="hn-right"
-            initial={{ opacity: 0, scale: 0.92 }}
+            initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+            transition={{ duration: 1.2, ease: EASE, delay: 0.25 }}
           >
             <div className="hn-canvas-wrap">
               <HeroScene mouseX={mouseX} mouseY={mouseY} />
 
-              {/* Floating glassmorphic cards */}
+              {/* Floating stat cards */}
               {FLOAT_CARDS.map((card) => (
                 <motion.div
                   key={card.label}
                   className="hn-float-card"
                   style={{ top: card.top, bottom: card.bottom, right: card.right }}
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 3.5 + Math.random() * 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3.5 + Math.random() * 2, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   <div className="hn-fc-header">
                     <span className="hn-fc-ico">{card.ico}</span>
@@ -150,29 +202,28 @@ export default function HeroNew() {
           className="hn-scroll"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 0.6 }}
+          transition={{ delay: 2, duration: 0.6 }}
         >
           <motion.div
             className="hn-scroll-dot"
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+            animate={{ y: [0, 9, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
           />
         </motion.div>
       </section>
 
-      {/* ── Trust Bar ──────────────────────────────────── */}
+      {/* ── Trust Bar ─────────────────────────────────── */}
       <section className="hn-trust">
         <motion.div
           className="hn-trust-head"
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Trusted by <strong>500+ Businesses</strong> Worldwide
+          Powering enterprises across the globe
         </motion.div>
 
-        {/* Logo marquee */}
         <div className="hn-marquee-wrap">
           <div className="hn-marquee">
             {[...LOGOS, ...LOGOS].map((name, i) => (
@@ -181,17 +232,16 @@ export default function HeroNew() {
           </div>
         </div>
 
-        {/* Stats */}
         <motion.div
           className="hn-stats-row"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.15 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
         >
           {STATS.map((s, i) => (
             <div key={s.l} className="hn-stat">
-              <div className="hn-stat-n">{s.n}</div>
+              <div className="hn-stat-n" style={{ color: s.accent }}>{s.n}</div>
               <div className="hn-stat-l">{s.l}</div>
               {i < STATS.length - 1 && <div className="hn-stat-sep" />}
             </div>
