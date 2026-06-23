@@ -197,7 +197,7 @@ export default function HeroNew() {
                   <div className="hd-m-val blue">
                     <Counter to={12} fmt={n => `${n}ms`} delay={950} />
                   </div>
-                  <Sparkline points={SPARK.latency} color="#60a5fa" id="s1" />
+                  <Sparkline points={SPARK.latency} color="#1a50d4" id="s1" />
                 </div>
                 <div className="hd-msep"/>
                 <div className="hd-metric">
@@ -208,7 +208,7 @@ export default function HeroNew() {
                   <div className="hd-m-val green">
                     <Counter to={994} fmt={n => `${(n / 10).toFixed(1)}%`} delay={1050} />
                   </div>
-                  <Sparkline points={SPARK.accuracy} color="#34d399" id="s2" />
+                  <Sparkline points={SPARK.accuracy} color="#059669" id="s2" />
                 </div>
                 <div className="hd-msep"/>
                 <div className="hd-metric">
@@ -219,7 +219,7 @@ export default function HeroNew() {
                   <div className="hd-m-val violet">
                     <Counter to={847} fmt={n => `${n}/m`} delay={1150} />
                   </div>
-                  <Sparkline points={SPARK.throughput} color="#a78bfa" id="s3" />
+                  <Sparkline points={SPARK.throughput} color="#7c3aed" id="s3" />
                 </div>
               </div>
 
@@ -262,8 +262,8 @@ export default function HeroNew() {
             >
               <div className="hd-fcard-ring">
                 <svg viewBox="0 0 40 40">
-                  <circle cx="20" cy="20" r="16" fill="none" stroke="rgba(52,211,153,.18)" strokeWidth="3.5"/>
-                  <circle cx="20" cy="20" r="16" fill="none" stroke="#34d399" strokeWidth="3.5"
+                  <circle cx="20" cy="20" r="16" fill="none" stroke="rgba(5,150,105,.15)" strokeWidth="3.5"/>
+                  <circle cx="20" cy="20" r="16" fill="none" stroke="#059669" strokeWidth="3.5"
                     strokeDasharray="88 12" strokeLinecap="round"
                     transform="rotate(-90 20 20)"/>
                 </svg>
